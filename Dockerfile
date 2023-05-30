@@ -36,5 +36,7 @@ RUN set -ex && \
     apt-get autoremove -y && \
     apt-get clean
 
+CMD pip install --no-cache -r job/requirements.txt
+WORKDIR "/job"
 ENTRYPOINT ["spark-submit"]
 CMD ["--help"]
